@@ -1,11 +1,15 @@
-import logo from './logo.svg';
-import './App.css';
-
+import "./App.css";
+import configureStore from "./store";
+import { Provider } from "react-redux";
+import OrderBook from "./components/order-book";
 function App() {
+  const store = configureStore();
   return (
-    <div className="App">
-    
-    </div>
+    <Provider store={store}>
+      <div className="App">
+        <OrderBook/>
+      </div>
+    </Provider>
   );
 }
 
